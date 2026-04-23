@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Pizza Creator</title>
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --light: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        .step {
+            margin-bottom: 30px;
+        }
+        .step-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: block;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        /* Hidden checkboxes/radios but styled labels */
+        .option input {
+            display: none;
+        }
+        .option label {
+            display: block;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .option input:checked + label {
+            background-color: var(--dark);
+            color: white;
+            border-color: var(--dark);
+        }
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .order-btn:hover {
+            background: #b38f4d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Artisan Pizza Lab</h1>
+    <p style="text-align: center; font-style: italic;">Customize your masterpiece</p>
+
+    <form>
+        <div class="step">
+            <span class="step-title">01. Choose Your Base</span>
+            <div class="grid">
+                <div class="option">
+                    <input type="radio" name="base" id="tomato" checked>
+                    <label for="tomato">Classic Tomato</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="base" id="curry">
+                    <label for="curry">Spicy Curry</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="base" id="thai">
+                    <label for="thai">Thai Peanut</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="base" id="seafood">
+                    <label for="seafood">Seafood Bisque</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-title">02. Fresh Ingredients</span>
+            <div class="grid">
+                <div class="option">
+                    <input type="checkbox" id="pepperoni">
+                    <label for="pepperoni">Pepperoni</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="beef">
+                    <label for="beef">Spiced Beef</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="clam">
+                    <label for="clam">Fresh Clams</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="pepper">
+                    <label for="pepper">Bell Peppers</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" id="basil">
+                    <label for="basil">Fresh Basil</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-title">03. The Cheese</span>
+            <div class="grid">
+                <div class="option">
+                    <input type="radio" name="cheese" id="mozzarella" checked>
+                    <label for="mozzarella">Mozzarella</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="cheese" id="parmesan">
+                    <label for="parmesan">Parmesan</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="cheese" id="blue">
+                    <label for="blue">Gorgonzola</label>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="order-btn">Add to Order</button>
+    </form>
+</div>
+
+</body>
+</html>
